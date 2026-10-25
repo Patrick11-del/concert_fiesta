@@ -1,5 +1,216 @@
+
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Concert Hub API</title></head>
-<body><main><h1>Concert Hub API is running</h1><p>This Python port exposes JSON endpoints. Use an API client to register, log in, select seats, and book tickets.</p><p><a href="/api/concerts">View concerts</a></p></main></body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert Fiesta | Live the Music</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #0e0b16;
+        color: #ffffff;
+        line-height: 1.6;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 8%;
+        background: #171222;
+        border-bottom: 1px solid #302440;
+    }
+
+    header h1 {
+        color: #c084fc;
+        font-size: 25px;
+    }
+
+    nav {
+        display: flex;
+        gap: 24px;
+    }
+
+    nav a {
+        color: #e9e3f2;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    nav a:hover {
+        color: #c084fc;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 24px;
+    }
+
+    #home {
+        margin-top: 32px;
+        padding: 100px 50px;
+        border-radius: 20px;
+        background: linear-gradient(120deg, #30105b, #6d28d9, #1b1640);
+        text-align: center;
+    }
+
+    #home h2 {
+        max-width: 750px;
+        margin: 0 auto 18px;
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 1.15;
+    }
+
+    #home p {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        color: #eee5ff;
+    }
+
+    #home > a {
+        display: inline-block;
+        padding: 13px 25px;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #5520a5;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #concerts,
+    #about {
+        padding: 65px 0;
+    }
+
+    #concerts h2,
+    #about h2 {
+        margin-bottom: 8px;
+        font-size: 30px;
+    }
+
+    #concerts > p {
+        margin-bottom: 28px;
+        color: #b9aec9;
+    }
+
+    #concert-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 22px;
+    }
+
+    .concert-card {
+        padding: 24px;
+        border: 1px solid #352747;
+        border-radius: 14px;
+        background: #191323;
+    }
+
+    .concert-card h3 {
+        margin-bottom: 12px;
+        color: #d8b4fe;
+        font-size: 21px;
+    }
+
+    .concert-card p {
+        margin: 8px 0;
+        color: #c8bfd5;
+    }
+
+    .concert-card button {
+        width: 100%;
+        margin-top: 18px;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #9333ea;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .concert-card button:hover {
+        background: #7e22ce;
+    }
+
+    #about {
+        color: #c8bfd5;
+    }
+
+    footer {
+        padding: 25px;
+        border-top: 1px solid #302440;
+        background: #171222;
+        color: #b9aec9;
+        text-align: center;
+    }
+
+    @media (max-width: 600px) {
+        header {
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        nav {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        #home {
+            padding: 65px 20px;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <h1>Concert Fiesta</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#concerts">Explore Concerts</a>
+            <a href="#about">About Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Feel the Music. Live the Moment.</h2>
+            <p>Discover amazing live shows and book your next unforgettable experience.</p>
+            <a href="#concerts">Explore Concerts</a>
+        </section>
+
+        <section id="concerts">
+            <h2>Upcoming Concerts</h2>
+            <p>Discover your next live music experience.</p>
+
+            <div id="concert-list">
+                Loading concerts...
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Concert Fiesta</h2>
+            <p>Your destination for discovering live music and booking concert tickets.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Concert Fiesta. All rights reserved.</p>
+    </footer>
+</body>
 </html>
