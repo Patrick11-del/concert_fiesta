@@ -154,7 +154,7 @@ class ConcertHub:
         self._add_user("Admin", "admin@concerthub.test", "admin12345", "admin")
         self._add_user("Gate Staff", "staff@concerthub.test", "staff12345", "staff")
         self._add_concert("Burna Live", "Eko Convention Centre", self.now() + timedelta(days=30), 25000)
-        self._add_concert("Wizkid Night", "Landmark Beach", self.now() + timedelta(days=10), 40000)
+        self._add_concert("Davido Night", "Landmark Beach", self.now() + timedelta(days=10), 40000)
 
     def _id(self) -> int:
         self.next_id += 1
